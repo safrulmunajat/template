@@ -4,24 +4,36 @@
 	<meta charset="UTF-8">
 	<title>APSI</title>
 	<link rel="stylesheet" type="text/css" href="fonts.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="/apsi/css/style.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/apsi/js/barchart.js"></script>
 </head>
 <body>
 	<header>
 		<div class="container">
 		<div class="menubar">
-			<a href="#" class="bt-menu"><img src="/apsi/images/menu.png"><span>AplikasiSaksi</span></a>
+			<a href="#" class="bt-menu"><img src="/apsi/images/menu.png"><span><label class="aplikasi">Aplikasi</label><label class="saksi">Saksi</label></span></a>
 		</div>
 				<nav>
 					<ul>
-						<li><a href="#"><span class="icon-dashboard"></span>Dashboard</a></li>
-						<li><a href="#"><span class="icon-informasi"></span>Informasi</a></li>
-						<li><a href="#"><span class="icon-quick-count"></span>Quick Count</a></li>
-						<li><a href="#"><span class="icon-voting"></span>Voting Suara</a></li>
-						<li><a href="#"><span class="icon-korlap"></span>Korlap</a></li>
-						<li><a href="#">More...</a></li>
-						<li><a href="#">AplikasiSaksi</a></li>
+						<li><a href="#"><span class="icon-home"></span>Dashboard</a></li>
+						<li><a href="#"><span class="icon-comments-o"></span>Informasi</a></li>
+						<li><a href="#"><span class="icon-clock-o"></span>Quick Count</a></li>
+						<li><a href="#"><span class="icon-line-chart"></span>Voting Suara</a></li>
+						<li><a href="#"><span class="icon-bullhorn"></span>Korlap</a></li>
+						<li class="more hide show"><a href="#"><span class="icon-caret-down"></span>More...</a>
+							<ul class="submenu">
+								<li><a href="#"><span class="icon-group"></span>Grup</a></li>
+								<li><a href="#"><span class="icon-image"></span>Rekaman</a></li>
+								<li><a href="#"><span class="icon-user"></span>Anggota</a></li>
+								<li><a href="#"><span class="icon-bar-chart"></span>Statistik</a></li>
+								<li><a href="#"><span class="icon-edit"></span>Audit</a></li>
+								<li><a href="#"><span class="icon-pencil"></span>Misc</a></li>
+							</ul>
+						</li>
+						<li class="close"><a href="#"><span class="icon-power-off"></span>Keluar</a></li>
+						<li class="aps"><a href="#"><label class="aplikasi">Aplikasi</label><label class="saksi">Saksi</label></a></li>
 					</ul>
 				</nav>
 		</div>		
@@ -33,11 +45,53 @@
 				<div class="picture-profile">
 					<img src="/apsi/images/avatar.png">
 				</div>
+				<div class="left-prof">
 				<div class="id">
-					sdfdsfdsf
+					<div class="large-2 column">
+						<label>Nama
+							<span>Anonim</span>
+						</label>
+					</div>
+					<div class="large-3 column">
+						<label>Hak Akses
+							<span>System Admin</span>
+						</label>
+					</div>
+					<div class="large-2 column">
+						<label><a href="#">Ubah Email</a></label>
+					</div>
+					<div class="large-2 column">
+						<label><a href="#">Ubah Kata Sandi</a></label>
+					</div>
 				</div>
-				<div class="right">
-					<a href="#"><span class="icon-arrow-up"></span></a>
+				<div class="id" style="padding:10px;">
+					<div class="large-2 column">&nbsp;</div>
+					<div class="large-3 column">&nbsp;</div>
+					<div class="large-2 column">
+						<label style="margin-top:0"><a href="#">Ubah Nama</a></label>
+					</div>
+					<div class="large-2 column">
+						<label style="margin-top:0"><a href="#">Ubah Foto Profil</a></label>
+					</div>	
+				</div>
+				<div class="id">
+					<div class="large-2 column">
+						<label>Email
+							<span>Anonim.it</span>
+						</label>
+					</div>
+					<div class="large-3 column">
+						<label>Kata Sandi
+							<span>**********</span>
+						</label>
+					</div>
+					<div class="large-2 column">
+						<label style="margin-top:1em"><a href="#">Keluar</a></label>
+					</div>
+				</div>			
+				</div>
+				<div class="right" id="up" style="margin-top:2.5em; margin-bottom:0; padding:0">
+					<a href="#"><span class="icon-angle-up"></span></a>
 				</div>
 			</div>
 		</div>
@@ -53,8 +107,8 @@
 					<label>Selamat Datang, </label>
 					<label class="nm-user">Anonim</label>
 				</div>
-				<div class="right">
-					<a href="#"><span class="icon-arrow-down"></span></a>
+				<div class="right" id="down">
+					<a href="#"><span class="icon-angle-down"></span></a>
 				</div>
 			</div>
 		</div>
@@ -63,7 +117,7 @@
 	<div class="dashboard">
 		<div class="container">
 			<div class="inner">
-				<h4>Dashboard</h4>
+				<h3>Dashboard</h3>
 				<div class="row">
 					<div class="columns large-4">
 						<label>Provinsi</label>
@@ -131,6 +185,33 @@
 		</div>
 	</div>
 
+
+		<!-- bar chart -->
+	<div class="container">
+		<div id="container" style="min-width: 310px; max-width:70%; height: 400px; margin: 0 auto"></div>
+	</div>
+	<table id="datatable">
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Nama Kandidat</th>
+				<th>Mr. Jones & Mr. Homes</th>
+				<th>Mr. Bones & Mr. Gomes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Mr. Jones & Mr. Homes</th>
+				<td>1244634</td>
+				<td>1680011</td>
+				
+			</tr>
+
+		</tbody>
+	</table>
+
+	<!-- end bar chart -->
+
 	<div class="vote">
 		<div class="container">
 			<div class="allvote">
@@ -153,9 +234,9 @@
 	<div class="table">
 		<div class="container">
 			<div class="judul">
-				<h6>Data TPS</h6>
+				<h6><label>Data</label> <label class="txtTps">TPS</label></h6>
 			</div>
-			<table>
+			<table class="table-vote" id="datatable">
 				<thead>
 					<tr>
 						<th width="50" style="padding-right:30px">No</th>
@@ -196,13 +277,13 @@
 			</table>
 
 			<div class="judul">
-				<h6>Data TPS</h6>
+				<h6><label>Data</label> <label class="txtTps">TPS</label></h6>
 			</div>
-			<table>
+			<table class="table-vote">
 				<thead>
 					<tr>
 						<th width="50" style="padding-right:30px">No</th>
-						<th align="left">Uraiant</th>
+						<th align="left">Uraian</th>
 						<th width="100" class="text-right">Total</th>
 					</tr>
 				</thead>
@@ -227,15 +308,419 @@
 		</div>
 	</div>
 
-	<script src="http://code.jquery.com/jquery-latest.js"></script>	
-	<script src="menu.js"></script>
+
+	<script src="/apsi/js/jquery-latest.js"></script>	
+	<script src="/apsi/js/menu.js"></script>-->
 	<script>
 		$(document).ready(function(){
-			$('.right').click(function(){
-				$('.menu-profile').slideToggle();
-			});	
+			$('#down').click(function(){
+				$('.menu-profile').slideDown();
+				$('.box-welcome').hide();
+			});
+			$('#up').click(function(){
+				$('.menu-profile').slideUp();
+				$('.box-welcome').show();
+			});
+
+			$('.show').click(function(){
+				$('.submenu').slideToggle();
+			});
 		});
 	</script>
+
+
 </body>
+
+<script src="/apsi/js/jquery.min.js"></script>
+<script src="/apsi/js/highcharts.js"></script>
+<script src="/apsi/js/modules/data.js"></script>
+<script src="/apsi/js/modules/exporting.js"></script>
+
+<!-- Informasi -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-comments-o"></i>Informasi</h4>
+				</div>
+				<div class="columns large-4 text-right">
+					<a href="#" class="button inline-button"><i class="icon-download"></i>Download Cara Penggunaan Aplikasi Saksi</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- End Informasi -->
+
+<!-- Download App -->
+
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-12">
+					<h4><i class="icon-mobile"></i>Download App</h4>
+				</div>
+			</div>
+		</div>
+			<div class="rows">
+				<div class="columns large-12">
+					<a href="#" class="button inline-button phone">Android</a>
+					<a href="#" class="button inline-button phone">iPhone</a>
+					<a href="#" class="button inline-button phone">Windows Mobile 8</a>
+					<a href="#" class="button inline-button phone">BlackBerry 10</a>
+				</div>
+			</div>
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-12">
+					<h4><i class="icon-phone-square"></i>Customer Service</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Informasi -->
+
+<!-- Quick Count -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-clock-o"></i>Quick Count</h4>
+				</div>
+				<div class="columns large-4 text-right">
+					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Quick Count -->
+
+<!-- Voting Suara -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-12">
+					<h4><i class="icon-line-chart" style="font-size:24px"></i>Voting Suara</h4>
+				</div>
+			</div>
+		</div>
+			<div class="tabs">
+				<ul>
+					<li class="selected"><a href="#">TPS</a></li>
+					<li><a href="#">Kelurahan</a></li>
+					<li><a href="#">Kecamatan</a></li>
+					<li><a href="#">Kabupaten/Kota</a></li>
+					<li><a href="#">Provinsi</a></li>
+				</ul>
+			</div>
+			<form action="#">
+				<div class="rows">
+					<div class="columns large-12">
+						<div class="columns large-3">
+								<label>Provinsi</label>
+								<select name="provinsi" id="txtKodeProv">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-3">
+								<label for="">Kabupaten/kota</label>
+								<select name="kabupaten" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-2">
+								<label for="">Kecamatan</label>
+								<select name="kecamatan" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-2">
+								<label for="">Kelurahan</label>
+								<select name="keluarahan" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-1">
+								<label for="">TPS</label>
+								<select name="tps" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-1">
+								<label for="">&nbsp;</label>
+								<button class="inline-button" type="submit"><i class="icon-chevron-right"></i></button>
+							</div>
+					</div>
+				</div>
+			</form>
+	</div>
+</div>
+<!-- End Voting Suara -->
+
+<!-- Korlap -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-bullhorn"></i>Korlap</h4>
+				</div>
+				<div class="columns large-4 text-right">
+					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+				</div>
+			</div>
+		</div>
+			<div class="rows">
+				<div class="columns large-9">
+					<div class="menu-list">
+						<ul>
+							<li><span>Urutkan</span></li>
+							<li><a href="#">Nama Pengguna</a></li>
+							<li><a href="#">Nama</a></li>
+							<li><a href="#">Email</a></li>
+							<li class="spacer"><span>&nbsp;</span></li>
+							<li><span>Status</span></li>
+							<li><a href="#">Aktif</a></li>
+							<li><a href="#">Tidak Aktif</a></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+				<div class="large-3 columns form">
+					<div class="rows">
+						<div class="columns small-10 ">
+							<input id="txtSearch" type="text" name="search" placeholder="Cari Korlap">
+						</div>
+						<div class="columns small-2">
+							<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+						</div>
+						<div class="columns large-1"></div>
+					</div>
+				</div>			
+			</div>
+	</div>
+</div>
+<!-- End Korlap -->
+
+<!-- Grup -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-group"></i>Grup</h4>
+				</div>
+				<div class="columns large-4 text-right">
+					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+				</div>
+			</div>
+		</div>
+			<div class="rows">
+				<div class="columns large-9">
+					<div class="menu-list">
+						<ul>
+							<li><span>Urutkan</span></li>
+							<li><a href="#">Nama Grup</a></li>
+							<li class="spacer"><span>&nbsp;</span></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+				<div class="large-3 columns form">
+					<div class="rows">
+						<div class="columns small-10 ">
+							<input id="txtSearch" type="text" name="search" placeholder="Cari Grup">
+						</div>
+						<div class="columns small-2">
+							<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+						</div>
+						<div class="columns large-1"></div>
+					</div>
+				</div>			
+			</div>
+	</div>
+</div>
+<!-- End Grup -->
+
+<!-- Rekaman -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-image"></i>Rekaman</h4>
+				</div>
+			</div>
+		</div>
+			<div class="rows">
+				<div class="columns large-12">
+					<a href="#" class="button inline-button phone">Foto</a>
+					<a href="#" class="button inline-button phone">Video</a>
+					<a href="#" class="button inline-button phone">Audio</a>
+				</div>
+			</div>
+	</div>
+</div>
+<!-- End Rekaman -->
+
+
+<!-- Anggota -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-user"></i>Anggota</h4>
+				</div>
+				<div class="columns large-4 text-right">
+					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+				</div>
+			</div>
+		</div>
+			<div class="rows">
+				<div class="columns large-9">
+					<div class="menu-list">
+						<ul>
+							<li><span>Urutkan</span></li>
+							<li><a href="#">Nama Pengguna</a></li>
+							<li><a href="#">Nama</a></li>
+							<li><a href="#">Hak Akses</a></li>
+							<li class="spacer"><span>&nbsp;</span></li>
+							<li><span>Status</span></li>
+							<li><a href="#">Aktif</a></li>
+							<li><a href="#">Tidak Aktif</a></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+				<div class="large-3 columns form">
+					<div class="rows">
+						<div class="columns small-10 ">
+							<input id="txtSearch" type="text" name="search" placeholder="Cari Anggota">
+						</div>
+						<div class="columns small-2">
+							<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+						</div>
+						<div class="columns large-1"></div>
+					</div>
+				</div>			
+			</div>
+	</div>
+</div>
+<!-- End Anggota -->
+
+<!-- Audit -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-group"></i>Audit</h4>
+				</div>
+			</div>
+		</div>
+			<div class="rows">
+				<div class="columns large-9">
+					<div class="menu-list">
+						<ul>
+							<li><span>Urutkan</span></li>
+							<li><a href="#">Nama Propinsi</a></li>
+							<li><a href="#">Jumlah Korlap</a></li>
+							<li><a href="#">Jumlah TPS</a></li>
+							<li><a href="#">Suara Prabowo</a></li>
+							<li><a href="#">Suara Jokowi</a></li>
+							<li><a href="#">Jumlah Penduduk</a></li>
+							<li class="spacer"><span>&nbsp;</span></li>
+							<div class="clear"></div>
+						</ul>
+					</div>
+				</div>
+			</div>
+						<form action="#">
+				<div class="rows">
+					<div class="columns large-12">
+						<div class="columns large-3">
+								<label>Provinsi</label>
+								<select name="provinsi" id="txtKodeProv">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-3">
+								<label for="">Kabupaten/kota</label>
+								<select name="kabupaten" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-2">
+								<label for="">Kecamatan</label>
+								<select name="kecamatan" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-2">
+								<label for="">Kelurahan</label>
+								<select name="keluarahan" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-1">
+								<label for="">TPS</label>
+								<select name="tps" id="">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="columns large-1">
+								<label for="">&nbsp;</label>
+								<button class="inline-button" type="submit"><i class="icon-chevron-right"></i></button>
+							</div>
+					</div>
+				</div>
+			</form>
+			<div class="rows">
+				<div class="columns large-6">
+					<h4><i class="icon-user"></i>Anggota</h4>
+				</div>
+				<div class="columns large-4 text-right">
+					<a href="#" class="button inline-button">Ekspor CSV</a>
+				</div>
+			</div>
+	</div>
+</div>
+<!-- End Audit -->
+
+
+<!-- Misc / Edit Upliner -->
+<div class="inner">
+	<div class="container">
+		<div class="main-title">
+			<div class="rows">
+				<div class="columns large-10">
+					<h4><i class="icon-pencil"></i>Misc / Edit Upliner</h4>
+				</div>
+				<div class="columns large-2 text-right"><a href="#">← Kembali</a></div>
+			</div>
+		</div>
+		<div class="form">
+			<div class="field">
+				<label for="txtName">Nama Pengguna</label>
+				<div class="rows">
+					<div class="columns large-3">
+						<input id="txtUsername" type="text" name="username">
+					</div>
+					<div class="columns large-1">
+						<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+					</div>
+					<div class="columns large-1"></div>
+				</div>
+		</div>
+	</div>	
+</div>
+<!-- End Misc / Edit Upliner -->
+
+
 <footer>Powered by APSI &copy; 2014</footer>
 </html>
