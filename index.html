@@ -4,25 +4,25 @@
 	<meta charset="UTF-8">
 	<title>APSI</title>
 	<link rel="stylesheet" type="text/css" href="fonts.css">
-	<link rel="stylesheet" type="text/css" href="/apsi/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/../apsi/css/style.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/apsi/js/barchart.js"></script>
+	<script type="text/javascript" src="../apsi/js/barchart.js"></script>
 </head>
 <body>
 	<header>
 		<div class="container">
 		<div class="menubar">
-			<a href="#" class="bt-menu"><img src="/apsi/images/menu.png"><span><label class="aplikasi">Aplikasi</label><label class="saksi">Saksi</label></span></a>
+			<a href="#" class="bt-menu"><img src="../apsi/images/menu.png"><span><label class="aplikasi">Aplikasi</label><label class="saksi">Saksi</label></span></a>
 		</div>
 				<nav>
 					<ul>
-						<li><a href="#"><span class="icon-home"></span>Dashboard</a></li>
-						<li><a href="#"><span class="icon-comments-o"></span>Informasi</a></li>
-						<li><a href="#"><span class="icon-clock-o"></span>Quick Count</a></li>
-						<li><a href="#"><span class="icon-line-chart"></span>Voting Suara</a></li>
-						<li><a href="#"><span class="icon-bullhorn"></span>Korlap</a></li>
-						<li class="more hide show"><a href="#"><span class="icon-caret-down"></span>More...</a>
+						<li class="nav-menu"><a href="#"><span class="icon-home"></span>Dashboard</a></li>
+						<li class="nav-menu"><a href="#"><span class="icon-comments-o"></span>Informasi</a></li>
+						<li class="nav-menu qc"><a href="#"><span class="icon-clock-o"></span>Quick Count</a></li>
+						<li class="nav-menu vs"><a href="#"><span class="icon-line-chart"></span>Voting Suara</a></li>
+						<li class="nav-menu"><a href="#"><span class="icon-bullhorn"></span>Korlap</a></li>
+						<li class="more dropdown"><a href="#"><span class="icon-caret-down"></span>More...</a>
 							<ul class="submenu">
 								<li><a href="#"><span class="icon-group"></span>Grup</a></li>
 								<li><a href="#"><span class="icon-image"></span>Rekaman</a></li>
@@ -32,65 +32,83 @@
 								<li><a href="#"><span class="icon-pencil"></span>Misc</a></li>
 							</ul>
 						</li>
+						<li class="aps"><a href=""><label class="aplikasi">Aplikasi</label><label class="saksi">Saksi</label></a>
+						</li>
 						<li class="close"><a href="#"><span class="icon-power-off"></span>Keluar</a></li>
-						<li class="aps"><a href="#"><label class="aplikasi">Aplikasi</label><label class="saksi">Saksi</label></a></li>
 					</ul>
 				</nav>
-		</div>		
-	</header>
+		</div>
 
+
+		
 	<div class="menu-profile">
 		<div class="container">
 			<div class="profile">
 				<div class="picture-profile">
-					<img src="/apsi/images/avatar.png">
+					<img src="../apsi/images/avatar.png">
 				</div>
 				<div class="left-prof">
 				<div class="id">
-					<div class="large-2 column">
+					<div class="large-2 column columns1">
 						<label>Nama
 							<span>Anonim</span>
 						</label>
 					</div>
-					<div class="large-3 column">
+					<div class="large-3 column columns2">
 						<label>Hak Akses
 							<span>System Admin</span>
 						</label>
 					</div>
-					<div class="large-2 column">
+					<div class="large-2 column columns3">
 						<label><a href="#">Ubah Email</a></label>
 					</div>
-					<div class="large-2 column">
+					<div class="large-2 column columns4">
 						<label><a href="#">Ubah Kata Sandi</a></label>
 					</div>
 				</div>
-				<div class="id" style="padding:10px;">
-					<div class="large-2 column">&nbsp;</div>
-					<div class="large-3 column">&nbsp;</div>
-					<div class="large-2 column">
+				<div class="id disable" style="padding:10px;">
+					<div class="large-2 column columns5">&nbsp;</div>
+					<div class="large-3 column columns6">&nbsp;</div>
+					<div class="large-2 column columns7">
 						<label style="margin-top:0"><a href="#">Ubah Nama</a></label>
 					</div>
-					<div class="large-2 column">
+					<div class="large-2 column columns8">
 						<label style="margin-top:0"><a href="#">Ubah Foto Profil</a></label>
 					</div>	
 				</div>
 				<div class="id">
-					<div class="large-2 column">
+					<div class="large-2 column columns9">
 						<label>Email
 							<span>Anonim.it</span>
 						</label>
 					</div>
-					<div class="large-3 column">
+					<div class="large-3 column columns10">
 						<label>Kata Sandi
 							<span>**********</span>
 						</label>
 					</div>
-					<div class="large-2 column">
+					<div class="large-2 column columns11">
 						<label style="margin-top:1em"><a href="#">Keluar</a></label>
 					</div>
-				</div>			
+				</div>		
+				<div class="id enable">
+					<div class="large-3 column">
+						<a href="#"><label>Ubah Email</label></a>
+					</div>
+					<div class="large-3 column">
+						<a href="#"><label>Ubah Kata Sandi</label></a>
+					</div>				
 				</div>
-				<div class="right" id="up" style="margin-top:2.5em; margin-bottom:0; padding:0">
+				<div class="id enable">
+					<div class="large-3 column">
+						<a href="#"><label>Ubah Nama</label></a>
+					</div>
+					<div class="large-3 column">
+						<a href="#"><label>Ubah Foto Profil</label></a>
+					</div>					
+				</div>					
+				</div>
+				<div class="right" id="up">
 					<a href="#"><span class="icon-angle-up"></span></a>
 				</div>
 			</div>
@@ -101,7 +119,7 @@
 		<div class="container">
 			<div class="welcome">
 				<div class="picture">
-					<img src="/apsi/images/avatar.png">
+					<img src="../apsi/images/avatar.png">
 				</div>
 				<div class="left">
 					<label>Selamat Datang, </label>
@@ -113,6 +131,8 @@
 			</div>
 		</div>
 	</div>
+		
+	</header>
 
 	<div class="dashboard">
 		<div class="container">
@@ -178,7 +198,7 @@
 					</div>
 					<div class="columns large-3">
 						<label for="">&nbsp;</label>
-						<button class="inline-button" type="submit" title="cari">Cari</button>
+						<button class="inline-button b-blue" type="submit" title="cari">Cari</button>
 					</div>
 				</div>
 			</div>
@@ -239,7 +259,7 @@
 			<table class="table-vote" id="datatable">
 				<thead>
 					<tr>
-						<th width="50" style="padding-right:30px">No</th>
+						<th width="50">No</th>
 						<th align="left">Nama Kandidat</th>
 						<th width="100" class="text-right">Jml. Suara</th>
 						<th width="50" class="text-right">%</th>
@@ -247,7 +267,7 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td align="center" style="padding-right:30px">1.</td>
+						<td align="center">1.</td>
 						<td>Mr. Jones & Mr. Homes</td>
 						<td class="text-right">
 							<small>1.244.634</small>
@@ -257,7 +277,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td align="center" style="padding-right:30px">2.</td>
+						<td align="center">2.</td>
 						<td>Mr. Bones & Mr. Gomes</td>
 						<td class="text-right">
 							<small>1.680.011</small>
@@ -282,21 +302,21 @@
 			<table class="table-vote">
 				<thead>
 					<tr>
-						<th width="50" style="padding-right:30px">No</th>
+						<th width="50">No</th>
 						<th align="left">Uraian</th>
 						<th width="100" class="text-right">Total</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td align="center" style="padding-right:30px">1.</td>
+						<td align="center">1.</td>
 						<td>Jumlah Suara Tidak Sah</td>
 						<td class="text-right">
 							<small>34.768.122</small>
 						</td>
 					</tr>
 					<tr>
-						<td align="center" style="padding-right:30px">2.</td>
+						<td align="center" >2.</td>
 						<td>Jumlah Suara Sah</td>
 						<td class="text-right">
 							<small>12.343.323.555</small>
@@ -309,8 +329,8 @@
 	</div>
 
 
-	<script src="/apsi/js/jquery-latest.js"></script>	
-	<script src="/apsi/js/menu.js"></script>-->
+	<script src="../apsi/js/jquery-latest.js"></script>	
+	<script src="../apsi/js/menu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#down').click(function(){
@@ -322,7 +342,7 @@
 				$('.box-welcome').show();
 			});
 
-			$('.show').click(function(){
+			$('.dropdown').click(function(){
 				$('.submenu').slideToggle();
 			});
 		});
@@ -331,10 +351,10 @@
 
 </body>
 
-<script src="/apsi/js/jquery.min.js"></script>
-<script src="/apsi/js/highcharts.js"></script>
-<script src="/apsi/js/modules/data.js"></script>
-<script src="/apsi/js/modules/exporting.js"></script>
+<script src="../apsi/js/jquery.min.js"></script>
+<script src="../apsi/js/highcharts.js"></script>
+<script src="../apsi/js/modules/data.js"></script>
+<script src="../apsi/js/modules/exporting.js"></script>
 
 <!-- Informasi -->
 <div class="inner">
@@ -345,7 +365,7 @@
 					<h4><i class="icon-comments-o"></i>Informasi</h4>
 				</div>
 				<div class="columns large-4 text-right">
-					<a href="#" class="button inline-button"><i class="icon-download"></i>Download Cara Penggunaan Aplikasi Saksi</a>
+					<a href="#" class="button inline-button b-blue"><i class="icon-download"></i>Download Cara Penggunaan Aplikasi Saksi</a>
 				</div>
 			</div>
 		</div>
@@ -364,10 +384,10 @@
 		</div>
 			<div class="rows">
 				<div class="columns large-12">
-					<a href="#" class="button inline-button phone">Android</a>
-					<a href="#" class="button inline-button phone">iPhone</a>
-					<a href="#" class="button inline-button phone">Windows Mobile 8</a>
-					<a href="#" class="button inline-button phone">BlackBerry 10</a>
+					<a href="#" class="button b-blue">Android</a>
+					<a href="#" class="button b-blue">iPhone</a>
+					<a href="#" class="button b-blue">Windows Mobile 8</a>
+					<a href="#" class="button b-blue">BlackBerry 10</a>
 				</div>
 			</div>
 		<div class="main-title">
@@ -390,7 +410,7 @@
 					<h4><i class="icon-clock-o"></i>Quick Count</h4>
 				</div>
 				<div class="columns large-4 text-right">
-					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+					<a href="#" class="button"><i class="icon-plus-circle"></i>Tambah Baru</a>
 				</div>
 			</div>
 		</div>
@@ -470,7 +490,7 @@
 					<h4><i class="icon-bullhorn"></i>Korlap</h4>
 				</div>
 				<div class="columns large-4 text-right">
-					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+					<a href="#" class="button"><i class="icon-plus-circle"></i>Tambah Baru</a>
 				</div>
 			</div>
 		</div>
@@ -496,7 +516,7 @@
 							<input id="txtSearch" type="text" name="search" placeholder="Cari Korlap">
 						</div>
 						<div class="columns small-2">
-							<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+							<button class="inline-button" type="submit"><i class="icon-search"></i></button>
 						</div>
 						<div class="columns large-1"></div>
 					</div>
@@ -515,7 +535,7 @@
 					<h4><i class="icon-group"></i>Grup</h4>
 				</div>
 				<div class="columns large-4 text-right">
-					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+					<a href="#" class="button"><i class="icon-plus-circle"></i>Tambah Baru</a>
 				</div>
 			</div>
 		</div>
@@ -536,7 +556,7 @@
 							<input id="txtSearch" type="text" name="search" placeholder="Cari Grup">
 						</div>
 						<div class="columns small-2">
-							<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+							<button class="inline-button" type="submit"><i class="icon-search"></i></button>
 						</div>
 						<div class="columns large-1"></div>
 					</div>
@@ -558,9 +578,9 @@
 		</div>
 			<div class="rows">
 				<div class="columns large-12">
-					<a href="#" class="button inline-button phone">Foto</a>
-					<a href="#" class="button inline-button phone">Video</a>
-					<a href="#" class="button inline-button phone">Audio</a>
+					<a href="#" class="button">Foto</a>
+					<a href="#" class="button">Video</a>
+					<a href="#" class="button">Audio</a>
 				</div>
 			</div>
 	</div>
@@ -577,7 +597,7 @@
 					<h4><i class="icon-user"></i>Anggota</h4>
 				</div>
 				<div class="columns large-4 text-right">
-					<a href="#" class="button inline-button"><i class="icon-plus-circle"></i>Tambah Baru</a>
+					<a href="#" class="button"><i class="icon-plus-circle"></i>Tambah Baru</a>
 				</div>
 			</div>
 		</div>
@@ -603,7 +623,7 @@
 							<input id="txtSearch" type="text" name="search" placeholder="Cari Anggota">
 						</div>
 						<div class="columns small-2">
-							<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+							<button class="inline-button" type="submit"><i class="icon-search"></i></button>
 						</div>
 						<div class="columns large-1"></div>
 					</div>
@@ -681,11 +701,8 @@
 				</div>
 			</form>
 			<div class="rows">
-				<div class="columns large-6">
-					<h4><i class="icon-user"></i>Anggota</h4>
-				</div>
 				<div class="columns large-4 text-right">
-					<a href="#" class="button inline-button">Ekspor CSV</a>
+					<a href="#" class="button">Ekspor CSV</a>
 				</div>
 			</div>
 	</div>
@@ -709,10 +726,10 @@
 				<label for="txtName">Nama Pengguna</label>
 				<div class="rows">
 					<div class="columns large-3">
-						<input id="txtUsername" type="text" name="username">
+						<input id="txtUsername" type="text" name="username" placeholder="Nama Pengguna">
 					</div>
 					<div class="columns large-1">
-						<button class="button inline-button" type="submit"><i class="icon-search"></i></button>
+						<button class="inline-button" type="submit"><i class="icon-search"></i></button>
 					</div>
 					<div class="columns large-1"></div>
 				</div>
