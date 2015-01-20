@@ -1,13 +1,13 @@
-@font-face { font-family: 'Lato-Bla'; src: url(/APSI/fonts/Lato-Bla.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-BlaIta'; src:url(/APSI/fonts/Lato-BlaIta.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-Bol'; src:url(/APSI/fonts/Lato-Bol.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-BolIta'; src:url(/APSI/fonts/Lato-BolIta.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-Hai'; src:url(/APSI/fonts/Lato-Hai.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-HaiIta'; src:url(/APSI/fonts/Lato-HaiIta.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-Lig'; src:url(/APSI/fonts/Lato-Lig.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-LigIta'; src:url(/APSI/fonts/Lato-LigIta.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-Reg'; src:url(/APSI/fonts/Lato-Reg.ttf) format('truetype'); }
-@font-face { font-family: 'Lato-RegIta'; src:url(/APSI/fonts/Lato-RegIta.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-Bla'; src: url(../fonts/Lato-Bla.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-BlaIta'; src:url(../fonts/Lato-BlaIta.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-Bol'; src:url(../fonts/Lato-Bol.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-BolIta'; src:url(../fonts/Lato-BolIta.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-Hai'; src:url(../fonts/Lato-Hai.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-HaiIta'; src:url(../fonts/Lato-HaiIta.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-Lig'; src:url(../fonts/Lato-Lig.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-LigIta'; src:url(../fonts/Lato-LigIta.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-Reg'; src:url(../fonts/Lato-Reg.ttf) format('truetype'); }
+@font-face { font-family: 'Lato-RegIta'; src:url(../fonts/Lato-RegIta.ttf) format('truetype'); }
 
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,pre,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,dl dt,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     margin: 0;
